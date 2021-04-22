@@ -9,6 +9,8 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -33,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         web_view.getSettings().setSaveFormData(true);
         web_view.getSettings().setSavePassword(true);
         web_view.loadUrl("http://stellamaryscoe.edu.in:2095/");
+        CookieSyncManager.createInstance(this);
+        CookieManager cookieManager = CookieManager.getInstance();
+        cookieManager.setAcceptCookie(true);
+        CookieSyncManager.getInstance().startSync();
 
         web_view.setWebViewClient(new WebViewClient() {
             @Override
@@ -53,5 +59,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    
+
 }
