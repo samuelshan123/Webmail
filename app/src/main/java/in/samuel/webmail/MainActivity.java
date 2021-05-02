@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         web_view.getSettings().setSaveFormData(true);
         web_view.getSettings().setSavePassword(true);
         web_view.loadUrl("http://stellamaryscoe.edu.in:2095/");
+      //  web_view.loadUrl("https://unbruised-dive.000webhostapp.com/index.php");
+
         CookieSyncManager.createInstance(this);
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(true);
